@@ -152,6 +152,9 @@ MINIFY_BUNDLES = {
             'css/mozorg/contribute.less',
             'css/sandstone/video-resp.less',
         ),
+        'contribute-new': (
+            'css/mozorg/contribute/contribute-new.less',
+        ),
         'contribute-page': (
             'css/mozorg/contribute-page.less',
         ),
@@ -461,6 +464,9 @@ MINIFY_BUNDLES = {
         ),
         'contribute': (
             'js/mozorg/contribute-faces.js',
+        ),
+        'contribute-new': (
+            'js/mozorg/contribute-new.js',
         ),
         'contribute-form': (
             'js/mozorg/contribute-form.js',

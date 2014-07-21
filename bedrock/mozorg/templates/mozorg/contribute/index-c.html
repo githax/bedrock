@@ -1,0 +1,437 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "mozorg/base-resp.html" %}
+
+{% block page_title %}{{_('Get Involved: Volunteer Opportunities at Mozilla')}}{% endblock %}
+{% block body_id %}c-actnow{% endblock %}
+
+{% block site_css %}
+  {{ super() }}
+  {{ css('contribute-new') }}
+{% endblock %}
+
+{% block js %}
+  {{ js('contribute-new') }}
+  {{ js('video') }}
+{% endblock %}
+
+{% block site_header_nav %}
+<nav id="nav-main" role="navigation">
+  <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
+  <ul id="nav-main-menu">
+    <li class="first"><a href="{{ url('mozorg.contribute.index-c') }}">{{_('Get Involved')}}</a></li>
+    <li><a href="{{ url('mozorg.contribute.tasks') }}">{{_('Tasks')}}</a></li>
+    <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
+    <li class="last"><a href="{{ url('mozorg.contribute.stories') }}">{{_('Stories')}}</a></li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<main role="main">
+
+  <header class="page-head">
+    <h1 class="page-title">Volunteer with Mozilla</h1>
+
+    <div class="head-stats short">
+      <h3>Did you know?</h3>
+      <ul>
+        <li><strong>7,300</strong> contributors</li>
+        <li><strong>154</strong> upcoming events</li>
+        <li><strong>23</strong> active projects</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="box">
+    <div class="box-head">
+      <section class="intro">
+        <h2>Help us build the Web<br> the world needs</h2>
+        <p>When you volunteer with Mozilla, you’re joining a global community of like-minded individuals working collaboratively to build a Internet that puts people everywhere first.</p>
+      </section>
+
+      <section class="top-task">
+        <h2>You can help right now</h2>
+        <p class="task-time">Estimated time: 30 seconds</p>
+        <p class="task-desc">The easiest way to get involved is to keep up with the Mozilla community on Twitter and Facebook.</p>
+        <ul class="social-buttons">
+          <li><a href="https://twitter.com/mozilla" class="button twitter">Follow @Mozilla</a></li>
+          <li><a href="https://facebook.com/mozilla" class="button facebook">Like us on Facebook</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="more-time">
+      <ul class="task-list">
+        <li class="task">
+          <h3 class="task-name">Become a Firefox Affiliate</h3>
+          <p class="task-time">Estimated time: 15 minutes</p>
+          <p class="task-desc">Encourage people to try Firefox by hosting customizable download buttons on your site or blog. Make your way onto the Affiliates leaderboard, and win some cool stuff.</p>
+          <p class="task-action"><a href="#" class="button go">Get started</a></p>
+        </li>
+
+        <li class="task">
+          <h3 class="task-name">Try out Firefox for Android</h3>
+          <p class="task-time">Estimated time: 30 minutes</p>
+          <p class="task-desc">Test out the latest version of Firefox for Android, explore the newest features and give us feedback on how we can make it better.</p>
+          <p class="task-action"><a href="#" class="button go">Learn more</a></p>
+        </li>
+
+        <li class="task">
+          <h3 class="task-name">Test Add-ons</h3>
+          <p class="task-time">Estimated time: 1 hour</p>
+          <p class="task-desc">Help out our Web QA team by running test cases for add-ons. Let us know what’s working and what isn’t.
+          <p class="task-action"><a href="#" class="button go">Begin now</a></p>
+        </li>
+      </ul>
+
+      <form class="time-form" method="get" action="{{ url('mozorg.contribute.tasks') }}">
+        <h3>How much time do you have?</h3>
+        <ul>
+          <li><label><input type="radio" name="time-available" value="15min"> 15 minutes</label></li>
+          <li><label><input type="radio" name="time-available" value="30min"> 30 minutes</label></li>
+          <li><label><input type="radio" name="time-available" value="1hour"> 1 hour</label></li>
+          <li><label><input type="radio" name="time-available" value="lots"> Lots</label></li>
+        </ul>
+        <button type="submit" class="button go">See more things to do</button>
+      </form>
+    </section>
+
+    <section class="how-to-start">
+      <h2>Not sure how to start?</h2>
+      <p>Let us help you before you starting helping us. Check out the different ways you can volunteer based on your interests and skills, see what’s happening near you or take some time to meet and be inspired by a current contributor.</p>
+
+      <ul class="contrib-paths">
+        <li class="path">
+          <form id="inquiry-form" method="get" action="{{ url('mozorg.contribute.inquiry') }}">
+            <h3 class="path-name">What are you into?</h3>
+            <ul class="option-list-small">
+              <li class="option"><label for="area-coding"><input type="checkbox" name="area" id="area-coding" value="coding"> Coding</label></li>
+              <li class="option"><label for="area-testing"><input type="checkbox" name="area" id="area-testing" value="testing"> Testing</label></li>
+              <li class="option"><label for="area-design"><input type="checkbox" name="area" id="area-design" value="design"> Design</label></li>
+              <li class="option"><label for="area-education"><input type="checkbox" name="area" id="area-education" value="education"> Education</label></li>
+              <li class="option"><label for="area-support"><input type="checkbox" name="area" id="area-support" value="support"> Support</label></li>
+              <li class="option"><label for="area-translation"><input type="checkbox" name="area" id="area-translation" value="translation"> Translation</label></li>
+              <li class="option"><label for="area-advocacy"><input type="checkbox" name="area" id="area-advocacy" value="advocacy"> Advocacy</label></li>
+              <li class="option"><label for="area-coordination"><input type="checkbox" name="area" id="area-coordination" value="coordination"> Coordination</label></li>
+            </ul>
+            <p class="path-action"><button type="submit" class="button go">Continue</button></p>
+          </form>
+        </li>
+
+        <li class="path">
+          <h3 class="path-name">Find a local event</h3>
+          <ul class="events">
+            <li><a href="https://reps.mozilla.org/e/back-to-school-maker-party/">Maker Party, August 2 - Makespace, Madrid</a></li>
+            <li><a href="https://reps.mozilla.org/e/back-to-school-maker-party/">Film Screening: <i>Terms &amp; Conditions May Apply</i>, August 4 - Universitat Pompeu Fabra</a></li>
+            <li><a href="https://reps.mozilla.org/e/back-to-school-maker-party/">Firefox OS App Day, August 5 - HackArena, Seville</a></li>
+          </ul>
+          <p class="path-action"><a href="https://reps.mozilla.org/events/" class="button go">And 11 more</a></p>
+        </li>
+
+        <li class="path">
+          <h3 class="path-name">Meet a Mozillian</h3>
+          <h4 class="person-name">Rubén <img src="{{ media('img/contribute/new/ruben.jpg') }}" alt=""></h4>
+          <p class="person-country">Spain</p>
+          <p class="person-bio">A collaborator with the Mozilla community since 2004, Ruben has worked on everything from website localization and marketing to QA and user support. He’s a maker, teacher and translator.</p>
+          <p class="path-action"><a href="{{ url('mozorg.contribute.stories') }}" class="button go">See more</a></p>
+        </li>
+      </ul>
+
+    </section>
+  </div>
+
+  <aside id="newsletter" class="billboard newsletter-form">
+    <form action="#" method="get" id="footer-email-form">
+      <h3>Sign up for weekly community updates</h3>
+
+      <div class="form-contents">
+        <div class="field field-email">
+          <label fpor="id_newsletter-email">Your email address:</label>
+          <input id="id_newsletter-email" name="newsletter-email" placeholder="Your email address" type="email">
+        </div>
+
+        <div id="form-details">
+          <div class="field field-country">
+            <select id="id_newsletter-country" name="newsletter-country">
+              <option value="af">Afghanistan</option>
+              <option value="al">Albania</option>
+              <option value="dz">Algeria</option>
+              <option value="as">American Samoa</option>
+              <option value="ad">Andorra</option>
+              <option value="ao">Angola</option>
+              <option value="ai">Anguilla</option>
+              <option value="aq">Antarctica</option>
+              <option value="ag">Antigua and Barbuda</option>
+              <option value="ar">Argentina</option>
+              <option value="am">Armenia</option>
+              <option value="aw">Aruba</option>
+              <option value="au">Australia</option>
+              <option value="at">Austria</option>
+              <option value="az">Azerbaijan</option>
+              <option value="bs">Bahamas</option>
+              <option value="bh">Bahrain</option>
+              <option value="bd">Bangladesh</option>
+              <option value="bb">Barbados</option>
+              <option value="by">Belarus</option>
+              <option value="be">Belgium</option>
+              <option value="bz">Belize</option>
+              <option value="bj">Benin</option>
+              <option value="bm">Bermuda</option>
+              <option value="bt">Bhutan</option>
+              <option value="bo">Bolivia</option>
+              <option value="ba">Bosnia and Herzegovina</option>
+              <option value="bw">Botswana</option>
+              <option value="bv">Bouvet Island</option>
+              <option value="br">Brazil</option>
+              <option value="io">British Indian Ocean Territory</option>
+              <option value="vg">British Virgin Islands</option>
+              <option value="bn">Brunei Darussalam</option>
+              <option value="bg">Bulgaria</option>
+              <option value="bf">Burkina Faso</option>
+              <option value="bi">Burundi</option>
+              <option value="kh">Cambodia</option>
+              <option value="cm">Cameroon</option>
+              <option value="ca">Canada</option>
+              <option value="cv">Cape Verde</option>
+              <option value="ky">Cayman Islands</option>
+              <option value="cf">Central African Republic</option>
+              <option value="td">Chad</option>
+              <option value="cl">Chile</option>
+              <option value="cn">China</option>
+              <option value="cx">Christmas Island</option>
+              <option value="cc">Cocos (Keeling) Islands</option>
+              <option value="co">Colombia</option>
+              <option value="km">Comoros</option>
+              <option value="cg">Congo-Brazzaville</option>
+              <option value="cd">Congo-Kinshasa</option>
+              <option value="ck">Cook Islands</option>
+              <option value="cr">Costa Rica</option>
+              <option value="hr">Croatia</option>
+              <option value="cu">Cuba</option>
+              <option value="cy">Cyprus</option>
+              <option value="cz">Czech Republic</option>
+              <option value="dk">Denmark</option>
+              <option value="dj">Djibouti</option>
+              <option value="dm">Dominica</option>
+              <option value="do">Dominican Republic</option>
+              <option value="ec">Ecuador</option>
+              <option value="eg">Egypt</option>
+              <option value="sv">El Salvador</option>
+              <option value="gq">Equatorial Guinea</option>
+              <option value="er">Eritrea</option>
+              <option value="ee">Estonia</option>
+              <option value="et">Ethiopia</option>
+              <option value="fk">Falkland Islands (Malvinas)</option>
+              <option value="fo">Faroe Islands</option>
+              <option value="fj">Fiji</option>
+              <option value="fi">Finland</option>
+              <option value="fr">France</option>
+              <option value="gf">French Guiana</option>
+              <option value="pf">French Polynesia</option>
+              <option value="tf">French Southern Territories</option>
+              <option value="ga">Gabon</option>
+              <option value="gm">Gambia</option>
+              <option value="ge">Georgia</option>
+              <option value="de">Germany</option>
+              <option value="gh">Ghana</option>
+              <option value="gi">Gibraltar</option>
+              <option value="gr">Greece</option>
+              <option value="gl">Greenland</option>
+              <option value="gd">Grenada</option>
+              <option value="gp">Guadeloupe</option>
+              <option value="gu">Guam</option>
+              <option value="gt">Guatemala</option>
+              <option value="gg">Guernsey</option>
+              <option value="gn">Guinea</option>
+              <option value="gw">Guinea-Bissau</option>
+              <option value="gy">Guyana</option>
+              <option value="ht">Haiti</option>
+              <option value="hm">Heard Island and McDonald Islands</option>
+              <option value="hn">Honduras</option>
+              <option value="hk">Hong Kong</option>
+              <option value="hu">Hungary</option>
+              <option value="is">Iceland</option>
+              <option value="in">India</option>
+              <option value="id">Indonesia</option>
+              <option value="ir">Iran</option>
+              <option value="iq">Iraq</option>
+              <option value="ie">Ireland</option>
+              <option value="im">Isle of Man</option>
+              <option value="il">Israel</option>
+              <option value="it">Italy</option>
+              <option value="ci">Ivory Coast</option>
+              <option value="jm">Jamaica</option>
+              <option value="jp">Japan</option>
+              <option value="je">Jersey</option>
+              <option value="jo">Jordan</option>
+              <option value="kz">Kazakhstan</option>
+              <option value="ke">Kenya</option>
+              <option value="ki">Kiribati</option>
+              <option value="kw">Kuwait</option>
+              <option value="kg">Kyrgyzstan</option>
+              <option value="la">Laos</option>
+              <option value="lv">Latvia</option>
+              <option value="lb">Lebanon</option>
+              <option value="ls">Lesotho</option>
+              <option value="lr">Liberia</option>
+              <option value="ly">Libya</option>
+              <option value="li">Liechtenstein</option>
+              <option value="lt">Lithuania</option>
+              <option value="lu">Luxembourg</option>
+              <option value="mo">Macao</option>
+              <option value="mk">Macedonia, F.Y.R. of</option>
+              <option value="mg">Madagascar</option>
+              <option value="mw">Malawi</option>
+              <option value="my">Malaysia</option>
+              <option value="mv">Maldives</option>
+              <option value="ml">Mali</option>
+              <option value="mt">Malta</option>
+              <option value="mh">Marshall Islands</option>
+              <option value="mq">Martinique</option>
+              <option value="mr">Mauritania</option>
+              <option value="mu">Mauritius</option>
+              <option value="yt">Mayotte</option>
+              <option value="mx">Mexico</option>
+              <option value="fm">Micronesia</option>
+              <option value="md">Moldova</option>
+              <option value="mc">Monaco</option>
+              <option value="mn">Mongolia</option>
+              <option value="me">Montenegro</option>
+              <option value="ms">Montserrat</option>
+              <option value="ma">Morocco</option>
+              <option value="mz">Mozambique</option>
+              <option value="mm">Myanmar</option>
+              <option value="na">Namibia</option>
+              <option value="nr">Nauru</option>
+              <option value="np">Nepal</option>
+              <option value="nl">Netherlands</option>
+              <option value="an">Netherlands Antilles</option>
+              <option value="nc">New Caledonia</option>
+              <option value="nz">New Zealand</option>
+              <option value="ni">Nicaragua</option>
+              <option value="ne">Niger</option>
+              <option value="ng">Nigeria</option>
+              <option value="nu">Niue</option>
+              <option value="nf">Norfolk Island</option>
+              <option value="kp">North Korea</option>
+              <option value="mp">Northern Mariana Islands</option>
+              <option value="no">Norway</option>
+              <option value="ps">Occupied Palestinian Territory</option>
+              <option value="om">Oman</option>
+              <option value="pk">Pakistan</option>
+              <option value="pw">Palau</option>
+              <option value="pa">Panama</option>
+              <option value="pg">Papua New Guinea</option>
+              <option value="py">Paraguay</option>
+              <option value="pe">Peru</option>
+              <option value="ph">Philippines</option>
+              <option value="pn">Pitcairn</option>
+              <option value="pl">Poland</option>
+              <option value="pt">Portugal</option>
+              <option value="pr">Puerto Rico</option>
+              <option value="qa">Qatar</option>
+              <option value="re">Reunion</option>
+              <option value="ro">Romania</option>
+              <option value="ru">Russian Federation</option>
+              <option value="rw">Rwanda</option>
+              <option value="bl">Saint Barthélemy</option>
+              <option value="sh">Saint Helena</option>
+              <option value="kn">Saint Kitts and Nevis</option>
+              <option value="lc">Saint Lucia</option>
+              <option value="mf">Saint Martin</option>
+              <option value="pm">Saint Pierre and Miquelon</option>
+              <option value="vc">Saint Vincent and the Grenadines</option>
+              <option value="ws">Samoa</option>
+              <option value="sm">San Marino</option>
+              <option value="st">Sao Tome and Principe</option>
+              <option value="sa">Saudi Arabia</option>
+              <option value="sn">Senegal</option>
+              <option value="rs">Serbia</option>
+              <option value="sc">Seychelles</option>
+              <option value="sl">Sierra Leone</option>
+              <option value="sg">Singapore</option>
+              <option value="sk">Slovakia</option>
+              <option value="si">Slovenia</option>
+              <option value="sb">Solomon Islands</option>
+              <option value="so">Somalia</option>
+              <option value="za">South Africa</option>
+              <option value="gs">South Georgia and the South Sandwich Islands</option>
+              <option value="kr">South Korea</option>
+              <option value="es">Spain</option>
+              <option value="lk">Sri Lanka</option>
+              <option value="sd">Sudan</option>
+              <option value="sr">Suriname</option>
+              <option value="sj">Svalbard and Jan Mayen</option>
+              <option value="sz">Swaziland</option>
+              <option value="se">Sweden</option>
+              <option value="ch">Switzerland</option>
+              <option value="sy">Syria</option>
+              <option value="tw">Taiwan</option>
+              <option value="tj">Tajikistan</option>
+              <option value="tz">Tanzania</option>
+              <option value="th">Thailand</option>
+              <option value="tl">Timor-Leste</option>
+              <option value="tg">Togo</option>
+              <option value="tk">Tokelau</option>
+              <option value="to">Tonga</option>
+              <option value="tt">Trinidad and Tobago</option>
+              <option value="tn">Tunisia</option>
+              <option value="tr">Turkey</option>
+              <option value="tm">Turkmenistan</option>
+              <option value="tc">Turks and Caicos Islands</option>
+              <option value="tv">Tuvalu</option>
+              <option value="ae">U.A.E.</option>
+              <option value="vi">U.S. Virgin Islands</option>
+              <option value="ug">Uganda</option>
+              <option value="ua">Ukraine</option>
+              <option value="gb">United Kingdom</option>
+              <option value="us" selected="selected">United States</option>
+              <option value="um">United States Minor Outlying Islands</option>
+              <option value="uy">Uruguay</option>
+              <option value="uz">Uzbekistan</option>
+              <option value="vu">Vanuatu</option>
+              <option value="va">Vatican City</option>
+              <option value="ve">Venezuela</option>
+              <option value="vn">Vietnam</option>
+              <option value="wf">Wallis and Futuna</option>
+              <option value="eh">Western Sahara</option>
+              <option value="ye">Yemen</option>
+              <option value="zm">Zambia</option>
+              <option value="zw">Zimbabwe</option>
+              <option value="ax">Åland Islands</option>
+            </select>
+          </div>
+
+          <div class="field field-format">
+            <label for="id_newsletter-fmt_0">
+              <input checked="checked" id="id_newsletter-fmt_0" name="newsletter-fmt" value="H" type="radio"> HTML
+            </label>
+            <label for="id_newsletter-fmt_1">
+              <input id="id_newsletter-fmt_1" name="newsletter-fmt" value="T" type="radio"> Text
+            </label>
+          </div>
+
+          <div class="field field-privacy">
+            <label for="id_newsletter-privacy" class="privacy-check-label">
+              <input id="id_newsletter-privacy" name="newsletter-privacy" type="checkbox">
+              <span class="title">I’m okay with Mozilla handling my info as explained in <a href="/privacy/">this Privacy Policy</a></span>
+            </label>
+          </div>
+
+          <p><small>We will only send you Mozilla-related information.</small></p>
+        </div>
+      </div>
+
+      <div class="field form-submit">
+        <button name="test-submit" class="button go" type="submit">Subscribe</button>
+      </div>
+    </form>
+  </aside>
+
+</main>
+{% endblock %}
+
+{% block email_form %}{% endblock %}
