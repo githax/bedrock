@@ -5,7 +5,8 @@
 {% extends "mozorg/base-resp.html" %}
 
 {% block page_title %}{{_('Get Involved: Volunteer Opportunities at Mozilla')}}{% endblock %}
-{% block body_id %}c-actnow{% endblock %}
+{% block body_id %}contribute{% endblock %}
+{% block body_class %}{{ super() }} thankyou{% endblock %}
 
 {% block site_css %}
   {{ super() }}
@@ -14,17 +15,16 @@
 
 {% block js %}
   {{ js('contribute-new') }}
-  {{ js('video') }}
+  {{ js('contribute-form') }}
 {% endblock %}
 
 {% block site_header_nav %}
 <nav id="nav-main" role="navigation">
   <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
   <ul id="nav-main-menu">
-    <li class="first"><a href="{{ url('mozorg.contribute.index-c') }}">{{_('Get Involved')}}</a></li>
-    <li><a href="{{ url('mozorg.contribute.tasks') }}">{{_('Tasks')}}</a></li>
+    <li class="first"><a href="{{ url('mozorg.contribute.a2.landing') }}">{{_('Get Involved')}}</a></li>
     <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
-    <li class="last"><a href="{{ url('mozorg.contribute.stories') }}">{{_('Stories')}}</a></li>
+    <li class="last"><a href="{{ url('mozorg.contribute.a2.stories') }}">{{_('Stories')}}</a></li>
   </ul>
 </nav>
 {% endblock %}
@@ -33,114 +33,50 @@
 <main role="main">
 
   <header class="page-head">
-    <h1 class="page-title">Volunteer with Mozilla</h1>
-
-    <div class="head-stats short">
-      <h3>Did you know?</h3>
-      <ul>
-        <li><strong>7,300</strong> contributors</li>
-        <li><strong>154</strong> upcoming events</li>
-        <li><strong>23</strong> active projects</li>
-      </ul>
-    </div>
+    <h1 class="page-title">Welcome to Mozilla!</h1>
+    <p class="page-intro">We’re excited to get you started, so don’t  forget to check your email for a message from us. Then stay tuned for  more information and opportunities. Thanks!</p>
   </header>
 
   <div class="box">
-    <div class="box-head">
-      <section class="intro">
-        <h2>Help us build the Web<br> the world needs</h2>
-        <p>When you volunteer with Mozilla, you’re joining a global community of like-minded individuals working collaboratively to build a Internet that puts people everywhere first.</p>
-      </section>
+    <h2 class="box-title">Here are some quick things you can do now:</h2>
 
-      <section class="top-task">
-        <h2>You can help right now</h2>
-        <p class="task-time">Estimated time: 30 seconds</p>
-        <p class="task-desc">The easiest way to get involved is to keep up with the Mozilla community on Twitter and Facebook.</p>
-        <ul class="social-buttons">
-          <li><a href="https://twitter.com/mozilla" class="button twitter">Follow @Mozilla</a></li>
-          <li><a href="https://facebook.com/mozilla" class="button facebook">Like us on Facebook</a></li>
-        </ul>
-      </section>
-    </div>
+    <section class="action one video">
+      <div class="action-intro">
+        <h3 class="action-title">Watch “The Web We Want”</h3>
+        <p>The Mozilla community is working hard to help shape the future of the Web — to keep it free and open for us, and for the generations that follow. Watch our open letter for an Internet that puts people first.</p>
+      </div>
 
-    <section class="more-time">
-      <ul class="task-list">
-        <li class="task">
-          <h3 class="task-name">Become a Firefox Affiliate</h3>
-          <p class="task-time">Estimated time: 15 minutes</p>
-          <p class="task-desc">Encourage people to try Firefox by hosting customizable download buttons on your site or blog. Make your way onto the Affiliates leaderboard, and win some cool stuff.</p>
-          <p class="task-action"><a href="#" class="button go">Get started</a></p>
-        </li>
-
-        <li class="task">
-          <h3 class="task-name">Try out Firefox for Android</h3>
-          <p class="task-time">Estimated time: 30 minutes</p>
-          <p class="task-desc">Test out the latest version of Firefox for Android, explore the newest features and give us feedback on how we can make it better.</p>
-          <p class="task-action"><a href="#" class="button go">Learn more</a></p>
-        </li>
-
-        <li class="task">
-          <h3 class="task-name">Test Add-ons</h3>
-          <p class="task-time">Estimated time: 1 hour</p>
-          <p class="task-desc">Help out our Web QA team by running test cases for add-ons. Let us know what’s working and what isn’t.
-          <p class="task-action"><a href="#" class="button go">Begin now</a></p>
-        </li>
-      </ul>
-
-      <form class="time-form" method="get" action="{{ url('mozorg.contribute.tasks') }}">
-        <h3>How much time do you have?</h3>
-        <ul>
-          <li><label><input type="radio" name="time-available" value="15min"> 15 minutes</label></li>
-          <li><label><input type="radio" name="time-available" value="30min"> 30 minutes</label></li>
-          <li><label><input type="radio" name="time-available" value="1hour"> 1 hour</label></li>
-          <li><label><input type="radio" name="time-available" value="lots"> Lots</label></li>
-        </ul>
-        <button type="submit" class="button go">See more things to do</button>
-      </form>
+      <figure class="action-content">
+        <iframe width="460" height="259" src="//www.youtube-nocookie.com/embed/Xm5i5kbIXzc?rel=0" frameborder="0" allowfullscreen></iframe>
+      </figure>
     </section>
 
-    <section class="how-to-start">
-      <h2>Not sure how to start?</h2>
-      <p>Let us help you before you starting helping us. Check out the different ways you can volunteer based on your interests and skills, see what’s happening near you or take some time to meet and be inspired by a current contributor.</p>
+    <section class="action two">
+      <div class="action-intro">
+        <h3 class="action-title">Connect with local Mozillians</h3>
+        <p>There are <strong>80</strong> local volunteers in Spain ready to meet up for work, play or a cup of coffee.</li>
+      </div>
 
-      <ul class="contrib-paths">
-        <li class="path">
-          <form id="inquiry-form" method="get" action="{{ url('mozorg.contribute.inquiry') }}">
-            <h3 class="path-name">What are you into?</h3>
-            <ul class="option-list-small">
-              <li class="option"><label for="area-coding"><input type="checkbox" name="area" id="area-coding" value="coding"> Coding</label></li>
-              <li class="option"><label for="area-testing"><input type="checkbox" name="area" id="area-testing" value="testing"> Testing</label></li>
-              <li class="option"><label for="area-design"><input type="checkbox" name="area" id="area-design" value="design"> Design</label></li>
-              <li class="option"><label for="area-education"><input type="checkbox" name="area" id="area-education" value="education"> Education</label></li>
-              <li class="option"><label for="area-support"><input type="checkbox" name="area" id="area-support" value="support"> Support</label></li>
-              <li class="option"><label for="area-translation"><input type="checkbox" name="area" id="area-translation" value="translation"> Translation</label></li>
-              <li class="option"><label for="area-advocacy"><input type="checkbox" name="area" id="area-advocacy" value="advocacy"> Advocacy</label></li>
-              <li class="option"><label for="area-coordination"><input type="checkbox" name="area" id="area-coordination" value="coordination"> Coordination</label></li>
-            </ul>
-            <p class="path-action"><button type="submit" class="button go">Continue</button></p>
-          </form>
-        </li>
-
-        <li class="path">
-          <h3 class="path-name">Find a local event</h3>
-          <ul class="events">
-            <li><a href="https://reps.mozilla.org/e/back-to-school-maker-party/">Maker Party, August 2 - Makespace, Madrid</a></li>
-            <li><a href="https://reps.mozilla.org/e/back-to-school-maker-party/">Film Screening: <i>Terms &amp; Conditions May Apply</i>, August 4 - Universitat Pompeu Fabra</a></li>
-            <li><a href="https://reps.mozilla.org/e/back-to-school-maker-party/">Firefox OS App Day, August 5 - HackArena, Seville</a></li>
-          </ul>
-          <p class="path-action"><a href="https://reps.mozilla.org/events/" class="button go">And 11 more</a></p>
-        </li>
-
-        <li class="path">
-          <h3 class="path-name">Meet a Mozillian</h3>
-          <h4 class="person-name">Rubén <img src="{{ media('img/contribute/new/ruben.jpg') }}" alt=""></h4>
-          <p class="person-country">Spain</p>
-          <p class="person-bio">A collaborator with the Mozilla community since 2004, Ruben has worked on everything from website localization and marketing to QA and user support. He’s a maker, teacher and translator.</p>
-          <p class="path-action"><a href="{{ url('mozorg.contribute.stories') }}" class="button go">See more</a></p>
-        </li>
+      <ul class="action-content connect icons">
+        <li><a href="http://www.mozilla-hispano.org/" class="website" title="www.mozilla-hispano.org">www.mozilla-hispano.org</a></li>
+        <li><a href="https://lists.mozilla.org/listinfo/hispano-general" class="email" title="{{ _('Mailing list') }}">{{ _('Mailing list') }}</a></li>
+        <li><a href="https://twitter.com/mozilla_hispano" class="twitter" title="Twitter: @mozilla_hispano">@mozilla_hispano</a></li>
+        <li><a href="https://www.facebook.com/mozillahispano" class="facebook" title="Facebook">Facebook</a></li>
+        <li><a href="irc://irc.mozilla.org/mozilla-hispano" class="irc" title="IRC: #mozilla-hispano">IRC: #mozilla-hispano</a></li>
       </ul>
-
     </section>
+
+    <section class="action three">
+      <div class="action-intro">
+        <h3 class="action-title">Read the Mozilla Manifesto</h3>
+        <p>Take a minute (or ten) to become familiar with the ten principles that guide our mission to promote openness, innovation and opportunity on the Web.</p>
+      </div>
+
+      <ul class="action-content start-now icons">
+        <li><a href="{{ url('mozorg.about.manifesto') }}" class="start-read">Read the Mozilla Manifesto</a></li>
+      </ul>
+    </section>
+
   </div>
 
   <aside id="newsletter" class="billboard newsletter-form">

@@ -20,9 +20,9 @@
 <nav id="nav-main" role="navigation">
   <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
   <ul id="nav-main-menu">
-    <li class="first"><a href="{{ url('mozorg.contribute.index-a') }}">{{_('Get Involved')}}</a></li>
+    <li class="first"><a href="{{ url('mozorg.contribute.a2.landing') }}">{{_('Get Involved')}}</a></li>
     <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
-    <li class="last"><a href="{{ url('mozorg.contribute.stories') }}">{{_('Stories')}}</a></li>
+    <li class="last"><a href="{{ url('mozorg.contribute.a2.stories') }}">{{_('Stories')}}</a></li>
   </ul>
 </nav>
 {% endblock %}
@@ -45,7 +45,7 @@
   </header>
 
   <div class="box with-sidebar">
-    <form class="main" id="inquiry-form" method="GET" action="{{ url('mozorg.contribute.thankyou') }}">
+    <form class="main" id="inquiry-form" method="GET" action="{{ url('mozorg.contribute.a2.thankyou') }}">
       <fieldset class="areas">
         <header>
           <h2 class="section-title">I’d like to help with&hellip;</h2>
@@ -53,14 +53,10 @@
         </header>
 
         <ul class="option-list">
-          <li class="option"><label for="area-coding"><input type="checkbox" name="area" id="area-coding" value="coding"> Coding</label></li>
-          <li class="option"><label for="area-testing"><input type="checkbox" name="area" id="area-testing" value="testing"> Testing</label></li>
-          <li class="option"><label for="area-design"><input type="checkbox" name="area" id="area-design" value="design"> Design</label></li>
-          <li class="option"><label for="area-education"><input type="checkbox" name="area" id="area-education" value="education"> Education</label></li>
-          <li class="option"><label for="area-support"><input type="checkbox" name="area" id="area-support" value="support"> Support</label></li>
-          <li class="option"><label for="area-translation"><input type="checkbox" name="area" id="area-translation" value="translation"> Translation</label></li>
-          <li class="option"><label for="area-advocacy"><input type="checkbox" name="area" id="area-advocacy" value="advocacy"> Advocacy</label></li>
-          <li class="option"><label for="area-coordination"><input type="checkbox" name="area" id="area-coordination" value="coordination"> Coordination</label></li>
+          <li class="option"><label for="area-design"><input type="checkbox" name="area" id="area-design" value="make"> Make</label></li>
+          <li class="option"><label for="area-education"><input type="checkbox" name="area" id="area-education" value="teach"> Teach</label></li>
+          <li class="option"><label for="area-support"><input type="checkbox" name="area" id="area-support" value="help"> Help</label></li>
+          <li class="option"><label for="area-translation"><input type="checkbox" name="area" id="area-translation" value="translate"> Translate</label></li>
         </ul>
       </fieldset>
 
@@ -364,7 +360,7 @@
           </a>
         </li>
         <li class="thing-person media">
-          <a href="{{ url('mozorg.contribute.stories') }}">
+          <a href="{{ url('mozorg.contribute.a2.stories') }}">
             <h3>Meet Rubén <img src="{{ media('img/contribute/new/ruben.jpg') }}" alt=""></h3>
             <p class="go">A Mozilla contributor since 2004</p>
           </a>

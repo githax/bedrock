@@ -21,9 +21,9 @@
 <nav id="nav-main" role="navigation">
   <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
   <ul id="nav-main-menu">
-    <li class="first"><a href="{{ url('mozorg.contribute.index-b') }}">{{_('Get Involved')}}</a></li>
+    <li class="first"><a href="{{ url('mozorg.contribute.b.landing') }}">{{_('Get Involved')}}</a></li>
     <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
-    <li class="last"><a href="{{ url('mozorg.contribute.stories') }}">{{_('Stories')}}</a></li>
+    <li class="last"><a href="{{ url('mozorg.contribute.b.stories') }}">{{_('Stories')}}</a></li>
   </ul>
 </nav>
 {% endblock %}
@@ -49,11 +49,11 @@
           <li>Translator</li>
         </ul>
 
-        <p><a href="{{ url('mozorg.contribute.stories') }}" class="button button-sand go">Read more</a></p>
+        <p><a href="{{ url('mozorg.contribute.b.stories') }}" class="button button-sand go">Read more</a></p>
       </section>
 
       <section class="cta">
-        <p><a href="{{ url('mozorg.contribute.inquiry') }}" class="button go"><strong>Start contributing</strong></a></p>
+        <p><a href="{{ url('mozorg.contribute.b.inquiry') }}" class="button go"><strong>Start contributing</strong></a></p>
       </section>
 
       <section>
@@ -349,7 +349,7 @@
             </a>
           </li>
         </ul>
-        <p><a href="{{ url('mozorg.contribute.events') }}" class="go">See all events</a></p>
+        <p><a href="https://reps.mozilla.org/events/" class="go">See all events</a></p>
       </section>
 
       <section class="news">

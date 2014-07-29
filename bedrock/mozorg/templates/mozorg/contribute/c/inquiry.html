@@ -20,9 +20,10 @@
 <nav id="nav-main" role="navigation">
   <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
   <ul id="nav-main-menu">
-    <li class="first"><a href="{{ url('mozorg.contribute.index-a') }}">{{_('Get Involved')}}</a></li>
+    <li class="first"><a href="{{ url('mozorg.contribute.c.landing') }}">{{_('Get Involved')}}</a></li>
+    <li><a href="{{ url('mozorg.contribute.c.tasks') }}">{{_('Tasks')}}</a></li>
     <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
-    <li class="last"><a href="{{ url('mozorg.contribute.stories') }}">{{_('Stories')}}</a></li>
+    <li class="last"><a href="{{ url('mozorg.contribute.c.stories') }}">{{_('Stories')}}</a></li>
   </ul>
 </nav>
 {% endblock %}
@@ -36,7 +37,7 @@
   </header>
 
   <div class="box with-sidebar">
-    <form class="main" id="inquiry-form" method="GET" action="{{ url('mozorg.contribute.thankyou') }}">
+    <form class="main" id="inquiry-form" method="GET" action="{{ url('mozorg.contribute.c.thankyou') }}">
       <fieldset class="areas">
         <header>
           <h2 class="section-title">I’d like to help with&hellip;</h2>
@@ -346,7 +347,7 @@
 
       <ul class="what-else">
         <li class="else-video">
-          <a href="{{ url('mozorg.about.manifesto') }}">
+          <a href="{{ url('mozorg.about') }}">
             <h4>Why volunteer with Mozilla?</h4>
             <p class="go">See for yourself</p>
           </a>

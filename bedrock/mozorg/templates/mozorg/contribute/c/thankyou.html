@@ -5,7 +5,8 @@
 {% extends "mozorg/base-resp.html" %}
 
 {% block page_title %}{{_('Get Involved: Volunteer Opportunities at Mozilla')}}{% endblock %}
-{% block body_id %}contribute-tasks{% endblock %}
+{% block body_id %}contribute{% endblock %}
+{% block body_class %}{{ super() }} thankyou{% endblock %}
 
 {% block site_css %}
   {{ super() }}
@@ -14,16 +15,17 @@
 
 {% block js %}
   {{ js('contribute-new') }}
+  {{ js('contribute-form') }}
 {% endblock %}
 
 {% block site_header_nav %}
 <nav id="nav-main" role="navigation">
   <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
   <ul id="nav-main-menu">
-    <li class="first"><a href="{{ url('mozorg.contribute.index-c') }}">{{_('Get Involved')}}</a></li>
-    <li><a href="{{ url('mozorg.contribute.tasks') }}">{{_('Tasks')}}</a></li>
+    <li class="first"><a href="{{ url('mozorg.contribute.c.landing') }}">{{_('Get Involved')}}</a></li>
+    <li><a href="{{ url('mozorg.contribute.c.tasks') }}">{{_('Tasks')}}</a></li>
     <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
-    <li class="last"><a href="{{ url('mozorg.contribute.stories') }}">{{_('Stories')}}</a></li>
+    <li class="last"><a href="{{ url('mozorg.contribute.c.stories') }}">{{_('Stories')}}</a></li>
   </ul>
 </nav>
 {% endblock %}
@@ -32,128 +34,48 @@
 <main role="main">
 
   <header class="page-head">
-    <h1 class="page-title">Things You Can Do</h1>
-    <h2>Here are just a handful of tasks we need help with right now.</h2>
+    <h1 class="page-title">Welcome to Mozilla!</h1>
+    <p class="page-intro">We’re excited to get you started, so don’t  forget to check your email for a message from us. Then stay tuned for  more information and opportunities. Thanks!</p>
   </header>
 
   <div class="box">
-    <section class="tasks">
+    <h2 class="box-title">Here are some quick things you can do now:</h2>
 
-      <header class="task-sort">
-        <p>Show things that take:</p>
-        <ul>
-          <li><a href="#" class="button-white">15 minutes</a></li>
-          <li><a href="#" class="button-white"> 30 minutes</a></li>
-          <li><a href="#" class="button-white"> 1 hour</a></li>
-          <li><a href="#" class="button-white"> Several hours</a></li>
-        </ul>
-      </header>
+    <section class="action one video">
+      <div class="action-intro">
+        <h3 class="action-title">Watch “The Web We Want”</h3>
+        <p>The Mozilla community is working hard to help shape the future of the Web — to keep it free and open for us, and for the generations that follow. Watch our open letter for an Internet that puts people first.</p>
+      </div>
 
-      <ul class="task-list">
-        <li class="task">
-          <h3 class="task-name">Become a Firefox Affiliate</h3>
-          <p class="task-time">Estimated time: 15 minutes</p>
-          <p class="task-desc">Encourage people to try Firefox by hosting customizable download buttons on your site or blog. Make your way onto the Affiliates leaderboard, and win some cool stuff.</p>
-          <p class="task-action"><a href="#" class="button go">Get started</a></p>
-        </li>
-        <li class="task">
-          <h3 class="task-name">Help us map the world!</h3>
-          <p class="task-time">Estimated time: 15 minutes</p>
-          <p class="task-desc">Enable context aware web applications by contributing to an open location service using your smart device running Firefox, Firefox OS or Android.</p>
-          <p class="task-action"><a href="#" class="button go">Learn how</a></p>
-        </li>
-        <li class="task">
-          <h3 class="task-name">Download Nightly</h3>
-          <p class="task-time">Estimated time: 15 minutes</p>
-          <p class="task-desc">Help us test the latest cutting edge innovations in Firefox!</p>
-          <p class="task-action"><a href="#" class="button go">Download now</a></p>
-        </li>
-      </ul>
+      <figure class="action-content">
+        <iframe width="460" height="259" src="//www.youtube-nocookie.com/embed/Xm5i5kbIXzc?rel=0" frameborder="0" allowfullscreen></iframe>
+      </figure>
+    </section>
 
-      <ul class="task-list">
-        <li class="task">
-          <h3 class="task-name">Download Aurora</h3>
-          <p class="task-time">Estimated time: 15 minutes</p>
-          <p class="task-desc">Try out the alpha release of Firefox and help us test upcoming features.</p>
-          <p class="task-action"><a href="#" class="button go">Download now</a></p>
-        </li>
-        <li class="task">
-          <h3 class="task-name">Try out Firefox for Android</h3>
-          <p class="task-time">Estimated time: 30 minutes</p>
-          <p class="task-desc">Test out the latest version of Firefox for Android, explore the newest features and give us feedback on how we can make it better.</p>
-          <p class="task-action"><a href="#" class="button go">Learn more</a></p>
-        </li>
-        <li class="task">
-          <h3 class="task-name">Test Add-ons</h3>
-          <p class="task-time">Estimated time: 1 hour</p>
-          <p class="task-desc">Help out our Web QA team by running test cases for add-ons. Let us know what’s working and what isn’t.</p>
-          <p class="task-action"><a href="#" class="button go">Begin now</a></p>
-        </li>
-      </ul>
+    <section class="action two">
+      <div class="action-intro">
+        <h3 class="action-title">Connect with local Mozillians</h3>
+        <p>There are <strong>80</strong> local volunteers in Spain ready to meet up for work, play or a cup of coffee.</li>
+      </div>
 
-      <ul class="task-list">
-        <li class="task">
-          <h3 class="task-name">Test Web Compatibility</h3>
-          <p class="task-time">Estimated time: 1 hour</p>
-          <p class="task-desc">We believe a person should be able to use the Web from which ever device and browser they are using, anywhere in the world. Help us make that a reality!</p>
-          <p class="task-action"><a href="#" class="button go">Learn more</a></p>
-        </li>
-        <li class="task">
-          <h3 class="task-name">Answer questions from Firefox users</h3>
-          <p class="task-time">Estimated time: Several hours</p>
-          <p class="task-desc">Help others using the open products built by the Mozilla community.</p>
-          <p class="task-action"><a href="#" class="button go">Get started</a></p>
-        </li>
-        <li class="task">
-          <h3 class="task-name">Translate Mozilla products in your native language</h3>
-          <p class="task-time">Estimated time: Several hours</p>
-          <p class="task-desc">Support all those speaking your native language by translating Mozilla products.</p>
-          <p class="task-action"><a href="#" class="button go">Find out how</a></p>
-        </li>
+      <ul class="action-content connect icons">
+        <li><a href="http://www.mozilla-hispano.org/" class="website" title="www.mozilla-hispano.org">www.mozilla-hispano.org</a></li>
+        <li><a href="https://lists.mozilla.org/listinfo/hispano-general" class="email" title="{{ _('Mailing list') }}">{{ _('Mailing list') }}</a></li>
+        <li><a href="https://twitter.com/mozilla_hispano" class="twitter" title="Twitter: @mozilla_hispano">@mozilla_hispano</a></li>
+        <li><a href="https://www.facebook.com/mozillahispano" class="facebook" title="Facebook">Facebook</a></li>
+        <li><a href="irc://irc.mozilla.org/mozilla-hispano" class="irc" title="IRC: #mozilla-hispano">IRC: #mozilla-hispano</a></li>
       </ul>
     </section>
 
-    <section class="how-to-start">
-      <h2>Not sure how to start?</h2>
-      <p>Let us help you before you starting helping us. Check out the different ways you can volunteer based on your interests and skills, see what’s happening near you or take some time to meet and be inspired by a current contributor.</p>
+    <section class="action three">
+      <div class="action-intro">
+        <h3 class="action-title">Read the Mozilla Manifesto</h3>
+        <p>Take a minute (or ten) to become familiar with the ten principles that guide our mission to promote openness, innovation and opportunity on the Web.</p>
+      </div>
 
-      <ul class="contrib-paths">
-        <li class="path">
-          <form id="inquiry-form" method="get" action="{{ url('mozorg.contribute.inquiry') }}">
-            <h3 class="path-name">What are you into?</h3>
-            <ul class="option-list-small">
-              <li class="option"><label for="area-coding"><input type="checkbox" name="area" id="area-coding" value="coding"> Coding</label></li>
-              <li class="option"><label for="area-testing"><input type="checkbox" name="area" id="area-testing" value="testing"> Testing</label></li>
-              <li class="option"><label for="area-design"><input type="checkbox" name="area" id="area-design" value="design"> Design</label></li>
-              <li class="option"><label for="area-education"><input type="checkbox" name="area" id="area-education" value="education"> Education</label></li>
-              <li class="option"><label for="area-support"><input type="checkbox" name="area" id="area-support" value="support"> Support</label></li>
-              <li class="option"><label for="area-translation"><input type="checkbox" name="area" id="area-translation" value="translation"> Translation</label></li>
-              <li class="option"><label for="area-advocacy"><input type="checkbox" name="area" id="area-advocacy" value="advocacy"> Advocacy</label></li>
-              <li class="option"><label for="area-coordination"><input type="checkbox" name="area" id="area-coordination" value="coordination"> Coordination</label></li>
-            </ul>
-            <p class="path-action"><button type="submit" class="button go">Continue</button></p>
-          </form>
-        </li>
-
-        <li class="path">
-          <h3 class="path-name">Find a local event</h3>
-          <ul class="events">
-            <li><a href="{{ url('mozorg.contribute.event-detail') }}">Maker Party, August 2 - Makespace, Madrid</a></li>
-            <li><a href="{{ url('mozorg.contribute.event-detail') }}">Film Screening: <i>Terms &amp; Conditions May Apply</i>, August 4 - Universitat Pompeu Fabra</a></li>
-            <li><a href="{{ url('mozorg.contribute.event-detail') }}">Firefox OS App Day, August 5 - HackArena, Seville</a></li>
-          </ul>
-          <p class="path-action"><a href="{{ url('mozorg.contribute.events') }}" class="button go">And 11 more</a></p>
-        </li>
-
-        <li class="path">
-          <h3 class="path-name">Meet a Mozillian</h3>
-          <h4 class="person-name">Rubén <img src="{{ media('img/contribute/new/ruben.jpg') }}" alt=""></h4>
-          <p class="person-country">Spain</p>
-          <p class="person-bio">A collaborator with the Mozilla community since 2004, Ruben has worked on everything from website localization and marketing to QA and user support. He’s a maker, teacher and translator.</p>
-          <p class="path-action"><a href="{{ url('mozorg.contribute.stories') }}" class="button go">See more</a></p>
-        </li>
+      <ul class="action-content start-now icons">
+        <li><a href="{{ url('mozorg.about.manifesto') }}" class="start-read">Read the Mozilla Manifesto</a></li>
       </ul>
-
     </section>
 
   </div>

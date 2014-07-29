@@ -1,0 +1,94 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "mozorg/base-resp.html" %}
+
+{% block page_title %}{{_('Get Involved: Volunteer Opportunities at Mozilla')}}{% endblock %}
+{% block body_id %}contribute{% endblock %}
+
+{% block site_css %}
+  {{ super() }}
+  {{ css('contribute-new') }}
+{% endblock %}
+
+{% block js %}
+  {{ js('contribute-new') }}
+{% endblock %}
+
+{% block site_header_nav %}
+<nav id="nav-main" role="navigation">
+  <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
+  <ul id="nav-main-menu">
+    <li class="first"><a href="{{ url('mozorg.contribute.a2.landing') }}">{{_('Get Involved')}}</a></li>
+    <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
+    <li class="last"><a href="{{ url('mozorg.contribute.a2.stories') }}">{{_('Stories')}}</a></li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<main role="main">
+
+  <header class="page-head">
+    <h1 class="page-title">Meet a Mozillian</h1>
+    <h2>Real people. Real stories.</h2>
+
+    <div class="head-stats">
+      <h3>Did you know?</h3>
+      <ul>
+        <li><strong>5586</strong> Mozillians all over the world</li>
+        <li><strong>80</strong> Mozillians in Spain</li>
+        <li><strong>14</strong> upcoming events</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="box">
+    <section class="person-main">
+      <figure>
+        <img src="{{ media('img/contribute/new/ruben-big-crop.jpg') }}" alt="">
+        <figcaption>
+          Rubén Martín
+          <i>Mozillian since 2004</i>
+        </figcaption>
+      </figure>
+
+      <h2>Meet Rubén</h2>
+      <p class="country">Spain</p>
+
+      <p>Rubén has been collaborating with the Mozilla community since 2004, working on everything from website localization and marketing to QA and user support. He’s also helped organized Mozilla events all over Spain.</p>
+
+      <p>As a Reps Mentor, Ruben is always looking for ways to get more involved in the projects he’s working on and loves the opportunity to empower other Mozillians along the way.</p>
+
+      <ul class="categories">
+        <li>Maker</li>
+        <li>Teacher</li>
+        <li>Translator</li>
+      </ul>
+
+      <ul class="links">
+        <li><a href="http://www.nukeador.com/" class="website">www.nukeador.com</a></li>
+        <li><a href="https://twitter.com/nukeador" class="twitter">@nukeador</a></li>
+        <li><a href="https://www.facebook.com/nukeador" class="facebook">Facebook</a>
+      </ul>
+    </section>
+
+    <section class="other-stories">
+      <h2>Read more Mozillian stories</h2>
+
+      <ul class="stories-list">
+        <li><a href="#"><img src="{{ media('img/contribute/new/person01.jpg') }}" alt=""></a></li>
+        <li><a href="#"><img src="{{ media('img/contribute/new/person02.jpg') }}" alt=""></a></li>
+        <li><a href="#"><img src="{{ media('img/contribute/new/person03.jpg') }}" alt=""></a></li>
+        <li><a href="#"><img src="{{ media('img/contribute/new/person04.jpg') }}" alt=""></a></li>
+        <li><a href="#"><img src="{{ media('img/contribute/new/person05.jpg') }}" alt=""></a></li>
+        <li><a href="#"><img src="{{ media('img/contribute/new/person06.jpg') }}" alt=""></a></li>
+      </ul>
+    </section>
+  </div>
+
+</main>
+{% endblock %}
+
+{% block email_form %}{% endblock %}
