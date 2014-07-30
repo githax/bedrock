@@ -21,7 +21,7 @@
   <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
   <ul id="nav-main-menu">
     <li class="first"><a href="{{ url('mozorg.contribute.a.landing') }}">{{_('Get Involved')}}</a></li>
-    <li><a href="https://reps.mozilla.org/events/">{{_('Events')}}</a></li>
+    <li><a href="{{ url('mozorg.contribute.a.events') }}">{{_('Events')}}</a></li>
     <li class="last"><a href="{{ url('mozorg.contribute.a.stories') }}">{{_('Stories')}}</a></li>
   </ul>
 </nav>
@@ -370,13 +370,13 @@
           </a>
         </li>
         <li class="thing-event">
-          <a href="https://reps.mozilla.org/e/back-to-school-maker-party/">
+          <a href="{{ url('mozorg.contribute.a.event-detail') }}">
             <h3><b>Event:</b> Maker Party</h3>
             <p>August 2 • 1pm • Madrid</p>
           </a>
         </li>
         <li class="thing-event">
-          <a href="https://reps.mozilla.org/e/back-to-school-maker-party/">
+          <a href="{{ url('mozorg.contribute.a.event-detail') }}">
             <h3><b>Event:</b> Firefox OS App Day</h3>
             <p>August 5 • 8am • Seville</p>
           </a>

@@ -175,17 +175,23 @@ urlpatterns = patterns('',
 
     page('contribute/a2', 'mozorg/contribute/a2/landing.html'),
     page('contribute/a2/stories', 'mozorg/contribute/a2/stories.html'),
+    page('contribute/a2/events', 'mozorg/contribute/a2/events.html'),
+    page('contribute/a2/events/detail', 'mozorg/contribute/a2/event-detail.html'),
     page('contribute/a2/thankyou', 'mozorg/contribute/a2/thankyou.html'),
 
     page('contribute/b', 'mozorg/contribute/b/landing.html'),
     page('contribute/b/inquiry', 'mozorg/contribute/b/inquiry.html'),
     page('contribute/b/stories', 'mozorg/contribute/b/stories.html'),
+    page('contribute/b/events', 'mozorg/contribute/b/events.html'),
+    page('contribute/b/events/detail', 'mozorg/contribute/b/event-detail.html'),
     page('contribute/b/thankyou', 'mozorg/contribute/b/thankyou.html'),
 
     page('contribute/c', 'mozorg/contribute/c/landing.html'),
     page('contribute/c/inquiry', 'mozorg/contribute/c/inquiry.html'),
     page('contribute/c/tasks', 'mozorg/contribute/c/tasks.html'),
     page('contribute/c/stories', 'mozorg/contribute/c/stories.html'),
+    page('contribute/c/events', 'mozorg/contribute/c/events.html'),
+    page('contribute/c/events/detail', 'mozorg/contribute/c/event-detail.html'),
     page('contribute/c/thankyou', 'mozorg/contribute/c/thankyou.html'),
 
 
